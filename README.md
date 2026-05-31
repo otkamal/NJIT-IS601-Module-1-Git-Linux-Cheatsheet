@@ -16,6 +16,24 @@ ls -la
 # move to another directory
 cd <directory-name>
 ```
+Basic file interactions.
+```{bash}
+# create an empty text file
+touch <filename>
+
+# delete a file
+rm <filename>
+
+# rename a file
+mv <old-name> <new-name>
+
+# move a file to a new location
+mv <old-location> <new-location>
+
+# copy a file to another location
+cp <file> <new-location>
+
+```
 ---
 
 ## GIT
