@@ -78,4 +78,16 @@ git switch <branch-to-merge-changes-into>
 # merge changes from the changed branch into the current branch
 git merge <branch-to-merge-changes-from>
 ```
+
+Pull (or pull and merge) remote branches to a local repository
+```{bash}
+# just grab remote branches 
+git fetch <remote-alias>
+
+# e.g.
+git fetch origin
+
+# grab remote branches and automatically merge commits into local branches
+git pull
+```
 ---
