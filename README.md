@@ -57,4 +57,15 @@ git commit -m <commit message>
 # e.g.
 git commit -m "fix(README): adjusted punctuation" 
 ```
+
+View branches and create a new one
+```{bash}
+# view all branches
+git branch
+
+# create a new branch
+git branch <new-branch-name>
+
+# alternatively `git switch -c` can be used as a shortcut to git branch and git checkout
+git switch -c <new-branch-name>
 ---
