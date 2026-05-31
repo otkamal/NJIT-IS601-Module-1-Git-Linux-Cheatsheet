@@ -65,6 +65,17 @@ kill -9 <pid>
 
 ```
 
+Basic text operations
+```{bash}
+# display contents of a file
+cat <path-to-file>
+
+# search for string in file
+grep <search-string> <path-to-file>
+
+# find and replace string in file
+sed 's/<string-to-find>/<string-to-replace/g' <path-to-file>
+```
 ## GIT
 
 Initialize a local directory as a Git directory.
