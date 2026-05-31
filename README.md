@@ -27,4 +27,14 @@ Show the status of files in the local directory
 ```{bash}
 git status
 ```
+
+Compare the difference of unstaged and staged files against previous commit.
+
+```{bash}
+# to compare unstaged changes
+git diff
+
+# to compare staged changes
+git diff --staged
+```
 ---
