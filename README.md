@@ -48,6 +48,23 @@ rmdir <directory>
 rm -rf <directory>
 
 ```
+
+Basic process interactions
+```{bash}
+# view running processes
+top
+
+# get PID for specific process
+pgrep <string-to-search>
+
+# end process gracefully
+kill <pid>
+
+# force terminate process
+kill -9 <pid>
+
+```
+
 ## GIT
 
 Initialize a local directory as a Git directory.
