@@ -37,4 +37,16 @@ git diff
 # to compare staged changes
 git diff --staged
 ```
+
+Add file to staging.
+```{bash}
+git add <file(s)>
+
+# e.g.
+# add all files in directory
+git add .
+
+# add just README.md
+git add README.md
+```
 ---
