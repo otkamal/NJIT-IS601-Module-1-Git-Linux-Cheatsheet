@@ -68,4 +68,14 @@ git branch <new-branch-name>
 
 # alternatively `git switch -c` can be used as a shortcut to git branch and git checkout
 git switch -c <new-branch-name>
+```
+
+Merge changes from one branch into the current branch
+```{bash}
+# checkout the branch to merge changes into
+git switch <branch-to-merge-changes-into>
+
+# merge changes from the changed branch into the current branch
+git merge <branch-to-merge-changes-from>
+```
 ---
