@@ -16,6 +16,7 @@ ls -la
 # move to another directory
 cd <directory-name>
 ```
+
 Basic file interactions.
 ```{bash}
 # create an empty text file
@@ -34,8 +35,19 @@ mv <old-location> <new-location>
 cp <file> <new-location>
 
 ```
----
 
+Basic directory interactions.
+```{bash}
+# create a new directory
+mkdir <new-directory>
+
+# delete an empty directory
+rmdir <directory>
+
+# delete a directory and all of its contents
+rm -rf <directory>
+
+```
 ## GIT
 
 Initialize a local directory as a Git directory.
