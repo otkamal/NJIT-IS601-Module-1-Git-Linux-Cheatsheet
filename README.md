@@ -49,4 +49,12 @@ git add .
 # add just README.md
 git add README.md
 ```
+
+Commit staged changes. [This](https://www.conventionalcommits.org/en/v1.0.0/) is a good resource for writing good commit messages.
+```{bash}
+git commit -m <commit message>
+
+# e.g.
+git commit -m "fix(README): adjusted punctuation" 
+```
 ---
