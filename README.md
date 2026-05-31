@@ -3,6 +3,19 @@
 This document serves as a reference sheet to useful commands used on Linux systems and the GIT versioning control system.
 
 ## Linux
+
+Navigate the Linux CLI
+```{bash}
+# show current directory
+pwd
+
+# show contents of current directory
+# -l = list contents, -a = all content (includes hidden files)
+ls -la
+
+# move to another directory
+cd <directory-name>
+```
 ---
 
 ## GIT
