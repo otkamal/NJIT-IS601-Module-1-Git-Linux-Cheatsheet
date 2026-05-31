@@ -90,4 +90,12 @@ git fetch origin
 # grab remote branches and automatically merge commits into local branches
 git pull
 ```
+
+Push a local branch upstream to remote Git repository.
+```{bash}
+git push <remote-alias> <local-branch>
+
+# e.g.
+git push origin ok/my-new-branch
+```
 ---
