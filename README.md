@@ -1,172 +1,91 @@
-# IS601 Linux and GIT Cheatsheet
+# IS601 Linux and Git Cheatsheet
 
-This document serves as a reference sheet to useful commands used on Linux systems and the GIT versioning control system.
+Cheatsheat for basic Linux and Git operations.
 
 ## Linux
 
-Navigate the Linux CLI
+### Navigate the CLI
 ```{bash}
-# show current directory
-pwd
-
-# show contents of current directory
-# -l = list contents, -a = all content (includes hidden files)
-ls -la
-
-# move to another directory
-cd <directory-name>
+pwd                     # show current directory
+ls -la <directory-path> # show contents of directory (including hidden files)
+cd <directory-name>     # move to another directory
 ```
 
-Basic file interactions.
+### File interactions
 ```{bash}
-# create an empty text file
-touch <filename>
-
-# delete a file
-rm <filename>
-
-# rename a file
-mv <old-name> <new-name>
-
-# move a file to a new location
-mv <old-location> <new-location>
-
-# copy a file to another location
-cp <file> <new-location>
-
+touch <filename>                    # create an empty text file
+rm <filename>                       # delete a file
+mv <old-name> <new-name>            # rename a file
+mv <old-location> <new-location>    # move a file to a new location
+cp <file> <new-location>            # copy a file to another location
 ```
 
-Basic directory interactions.
+### Directory interactions
 ```{bash}
-# create a new directory
-mkdir <new-directory>
-
-# delete an empty directory
-rmdir <directory>
-
-# delete a directory and all of its contents
-rm -rf <directory>
-
+mkdir <new-directory>   # create a new directory
+rmdir <directory>       # delete an empty directory
+rm -rf <directory>      # delete a directory and all of its contents
 ```
 
-Basic process interactions
+### Process interactions
 ```{bash}
-# view running processes
-top
-
-# get PID for specific process
-pgrep <string-to-search>
-
-# end process gracefully
-kill <pid>
-
-# force terminate process
-kill -9 <pid>
-
+top                         # view running processes
+pgrep <string-to-search>    # get PID for specific process
+kill <pid>                  # end process gracefully
+kill -9 <pid>               # force terminate process
 ```
 
-Basic text operations
+### Text operations
 ```{bash}
-# display contents of a file
-cat <path-to-file>
+cat <path-to-file>                           # display contents of a file
+grep <search-string> <path-to-file>          # search for string in file
+sed 's/<find>/<replace>/g' <path-to-file>    # find and replace string in file
 
-# search for string in file
-grep <search-string> <path-to-file>
-
-# find and replace string in file
-sed 's/<string-to-find>/<string-to-replace/g' <path-to-file>
-```
-## GIT
-
-Initialize a local directory as a Git directory.
-
-```{bash}
-git init <directory>
-```
-
-Pull a remote repository from a hosted location. Depending on the method of authentication, the format of the specification of the remote repo can vary.
-
-```{bash}
-git clone <remote-repository>
-
-# e.g. with SSH auth
-git clone git@github.com:otkamal/mod1_cheatsheet.git
-```
-
-Show the status of files in the local directory
-
-```{bash}
-git status
-```
-
-Compare the difference of unstaged and staged files against previous commit.
-
-```{bash}
-# to compare unstaged changes
-git diff
-
-# to compare staged changes
-git diff --staged
-```
-
-Add file to staging.
-```{bash}
-git add <file(s)>
-
-# e.g.
-# add all files in directory
-git add .
-
-# add just README.md
-git add README.md
-```
-
-Commit staged changes. [This](https://www.conventionalcommits.org/en/v1.0.0/) is a good resource for writing good commit messages.
-```{bash}
-git commit -m <commit message>
-
-# e.g.
-git commit -m "fix(README): adjusted punctuation" 
-```
-
-View branches and create a new one
-```{bash}
-# view all branches
-git branch
-
-# create a new branch
-git branch <new-branch-name>
-
-# alternatively `git switch -c` can be used as a shortcut to git branch and git checkout
-git switch -c <new-branch-name>
-```
-
-Merge changes from one branch into the current branch
-```{bash}
-# checkout the branch to merge changes into
-git switch <branch-to-merge-changes-into>
-
-# merge changes from the changed branch into the current branch
-git merge <branch-to-merge-changes-from>
-```
-
-Pull (or pull and merge) remote branches to a local repository
-```{bash}
-# just grab remote branches 
-git fetch <remote-alias>
-
-# e.g.
-git fetch origin
-
-# grab remote branches and automatically merge commits into local branches
-git pull
-```
-
-Push a local branch upstream to remote Git repository.
-```{bash}
-git push <remote-alias> <local-branch>
-
-# e.g.
-git push origin ok/my-new-branch
 ```
 ---
+## Git
+
+### Set things up
+```{bash}
+git init <directory>            # initialize a local directory as a Git directory.
+git clone <remote-repository>   # pull a remote repository and contents to local directory
+```
+
+### Create branches
+```{bash}
+git branch                      # view all branches
+git branch <new-branch-name>    # create a new branch
+git switch -c <new-branch-name> # create a new branch and switch to it
+```
+> [Conventional branching](https://conventionalbranch.org/) for writing good branch names.
+
+### Evaluate changes
+```{bash}
+git status          # show the status of files in the local directory
+git diff            # to compare unstaged changes against branch
+git diff --staged   # to compare staged changes against branch
+```
+
+### Make changes
+```{bash}
+# STEP 1
+git add .                       # stage all files in directory
+git add <file(s)>               # stage specific file
+
+# STEP 2
+git commit -m <commit message>  # commit staged changes
+```
+> [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for writing good commit messages.
+
+### Merge changes
+```{bash}
+git merge <branch-to-merge-changes-from> # merge changes from the changed branch into the current branch
+```
+
+### Push/Pull Changes
+```{bash}
+git fetch <remote-alias>    # fetch remote branches, but don't merge
+git pull                    # fetch remote branches, and merge them
+
+git push <remote-alias> <local-branch> # push a local branch upstream to remote Git repository.
+```
